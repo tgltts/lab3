@@ -2,7 +2,7 @@
 
 
 void verificacao(int a,int b, int c){
-  if (a < (b+c) || b < (c+a) || c < (a+b)){
+  if (a < (b+c) && b < (c+a) && c < (a+b)){
      printf("Este Triângulo existe");
     }
   else{
