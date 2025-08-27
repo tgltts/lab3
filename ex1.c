@@ -1,34 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    float media;
-    int freq;
+void media_frequencia(float media, int freq){
+  if (freq < 75){
+      printf(" REPROVADO por Baixa frequência");
+  }else if ( freq >= 75 && media >= 7.5){
+            printf("APROVADO.");
+  }else{
+      printf(" DE EXAME."); 
+  }
+}
 
-    // Validação de entrada
-    do {
-        printf("Digite a sua média (0 a 10): ");
-        scanf("%f", &media);
+int main(){
+  float media;
+  int freq;
 
-        printf("Digite a sua frequência (0 a 100): ");
-        scanf("%d", &freq);
+  printf("Digite sua media: ");
+    scanf("%f", &media);
 
-        if (media < 0 || media > 10 || freq < 0 || freq > 100) {
-            printf("Valores inválidos, digite novamente!\n\n");
-        }
+    printf("Digite sua frequencia: ");
+    scanf("%d", &freq);
 
-    } while (media < 0 || media > 10 || freq < 0 || freq > 100);
-
-    // Regras de aprovação
-    if (freq < 75) {
-        printf("REPROVADO (frequência insuficiente)\n");
-    }
-    else if (freq >= 75 && media >= 7.5) {
-        printf("APROVADO!\n");
-    }
-    else {
-        printf("DE EXAME.\n");
-    }
+    media_frequencia(media, freq);
 
     return 0;
 }
+
+
